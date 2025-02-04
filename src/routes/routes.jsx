@@ -1,32 +1,36 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Main from '../layouts/Main';
-import Analytics from '../pages/Analytics';
-import Competition from '../pages/Competition';
-import Moderation from '../pages/Moderation';
-import PaymentManagement from '../pages/PaymentManagement';
+
+
+
+import PaymentManagement from '../pages/Inspectionsheets';
 import UserManagement from '../pages/UserManagement';
+import SuperAdmin from '../layouts/SuperAdmin';
+import Dashboard from '../pages/Dashboard';
+import Assets from '../pages/Assets';
+import Tickets from '../pages/Tickets';
+import Inspectionsheets from '../pages/Inspectionsheets';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main />,
+    element: <SuperAdmin />,
     children: [
       {
         path: "/",
-        element: <Analytics></Analytics>,
+        element: <Dashboard/>,
       },
       {
-        path: "/competition",
-        element: <Competition></Competition>,
+        path: "/assets",
+        element: <Assets/>,
       },
       {
-        path: "/moderation",
-        element: <Moderation></Moderation>,
+        path: "/tickets",
+        element: <Tickets/> ,
       },
       {
-        path: "/payment-management",
-        element: <PaymentManagement></PaymentManagement>,
+        path: "/inspectionsheets",
+        element: <Inspectionsheets/>,
       },
       {
         path: "/user-management",

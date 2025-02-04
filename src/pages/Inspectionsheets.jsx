@@ -1,6 +1,6 @@
 
 
-const PaymentManagement = () => {
+const Inspectionsheets = () => {
     return (
         <div>
             Payment Management
@@ -8,4 +8,4 @@ const PaymentManagement = () => {
     );
 };
 
-export default PaymentManagement;
+export default Inspectionsheets;

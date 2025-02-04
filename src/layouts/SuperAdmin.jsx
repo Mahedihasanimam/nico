@@ -7,7 +7,7 @@ import MainHeader from "../components/LayoutsComponents/MainHeader";
 const { Content } = Layout;
 
 
-const Main = () => {
+const SuperAdmin = () => {
     const [collapsed, setCollapsed] = useState(false);
 
 
@@ -37,4 +37,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default SuperAdmin;
