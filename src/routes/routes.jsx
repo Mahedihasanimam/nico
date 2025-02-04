@@ -9,6 +9,9 @@ import Dashboard from '../pages/Dashboard';
 import Assets from '../pages/Assets';
 import Tickets from '../pages/Tickets';
 import Inspectionsheets from '../pages/Inspectionsheets';
+import TicketsActivity from '../components/superadmin/TicketsActivity';
+import InspactionAcvity from '../components/superadmin/InspactionAcvity';
+import JobCardsOverview from '../components/superadmin/JobCardsOverview';
 
 
 const router = createBrowserRouter([
@@ -27,6 +30,19 @@ const router = createBrowserRouter([
       {
         path: "/tickets",
         element: <Tickets/> ,
+      },
+      {
+        path: "/tickets-activity",
+        element: <TicketsActivity/> ,
+      },
+      
+      {
+        path: "/inspections-activity",
+        element: <InspactionAcvity/> ,
+      },
+      {
+        path: "/jobcards-overview",
+        element: <JobCardsOverview/> ,
       },
       {
         path: "/inspectionsheets",
