@@ -4,7 +4,7 @@ import TextArea from "antd/es/input/TextArea"
 
 
 
-const InspactionModal = ({ isOpen, onClose, ticket }) => {
+const JobcardModal = ({ isOpen, onClose, ticket }) => {
   return (
     <Modal
 
@@ -18,7 +18,7 @@ const InspactionModal = ({ isOpen, onClose, ticket }) => {
       title={
         <div className="modal-header text-center w-full">
           <span className="status-badge">NEW</span>
-          <span className="header-title text-white flex  text-white text-[20px] font-normal">Inspection sheet of ViewSonic (HFGS647HNSJU)</span>
+          <span className="header-title text-white flex  text-white text-[20px] font-normal">Job card for ViewSonic (HFGS647HNSJU)</span>
         </div>
       }
     >
@@ -58,22 +58,70 @@ const InspactionModal = ({ isOpen, onClose, ticket }) => {
 
         <div className="form-row">
           <div className="form-group">
-            <label className="text-[16px] text-[#000000] font-medium">Assigned by</label>
+            <label className="text-[16px] text-[#000000] font-medium">Customer name</label>
             <div className="input-with-copy">
-              <Input value="Support agent name here" readOnly className="bg-white h-[44px]" />
+              <Input placeholder="Md. Abid" readOnly className="bg-white h-[44px]" />
 
             </div>
           </div>
           <div className="form-group">
-            <label className="text-[16px] text-[#000000] font-medium">Technician</label>
+            <label className="text-[16px] text-[#000000] font-medium">Number</label>
             <div className="input-with-copy">
-              <Input value="Md. Abid" readOnly className="bg-white h-[44px]" />
+              <Input placeholder="01712345678" readOnly className="bg-white h-[44px]" />
+
+            </div>
+          </div>
+        </div>
+        <div className="form-row">
+          <div className="form-group">
+            <label className="text-[16px] text-[#000000] font-medium">Organization</label>
+            <div className="input-with-copy">
+              <Input placeholder="Organization" readOnly className="bg-white h-[44px]" />
+
+            </div>
+          </div>
+          <div className="form-group">
+            <label className="text-[16px] text-[#000000] font-medium">Location</label>
+            <div className="input-with-copy">
+              <Input placeholder="Banasree, Rampura, Dhaka" readOnly className="bg-white h-[44px]" />
+
+            </div>
+          </div>
+        </div>
+        <div className="form-row">
+          <div className="form-group">
+            <label className="text-[16px] text-[#000000] font-medium">Assigned by</label>
+            <div className="input-with-copy">
+              <Input placeholder="Support agent name" readOnly className="bg-white h-[44px]" />
+
+            </div>
+          </div>
+          <div className="form-group">
+            <label className="text-[16px] text-[#000000] font-medium">Technician name</label>
+            <div className="input-with-copy">
+              <Input placeholder="Md. Abid" readOnly className="bg-white h-[44px]" />
+
+            </div>
+          </div>
+        </div>
+        <div className="form-row">
+          <div className="form-group">
+            <label className="text-[16px] text-[#000000] font-medium">Comment</label>
+            <div className="input-with-copy">
+              <Input placeholder="Technician’s comment" readOnly className="bg-white h-[44px]" />
+
+            </div>
+          </div>
+          <div className="form-group">
+            <label className="text-[16px] text-[#000000] font-medium">Signature</label>
+            <div className="input-with-copy">
+              <Input placeholder="Location employee signature" readOnly className="bg-white h-[44px]" />
 
             </div>
           </div>
         </div>
 
-        <div className="form-group flex gap-4 ">
+        {/* <div className="form-group flex gap-4 ">
           <div className="form-group w-full">
             <label className="text-[16px] text-[#000000] font-medium">Comment</label>
             <div className="input-with-copy ">
@@ -104,11 +152,11 @@ const InspactionModal = ({ isOpen, onClose, ticket }) => {
               <div className="input-with-copy">
                 <Input value="Location employee name" readOnly className="bg-white h-[44px]" />
 
-              </div> 
+              </div>
             </div>
 
           </div>
-        </div>
+        </div> */}
 
         <div className="modal-footer">
 
@@ -119,5 +167,5 @@ const InspactionModal = ({ isOpen, onClose, ticket }) => {
   )
 }
 
-export default InspactionModal
+export default JobcardModal
 

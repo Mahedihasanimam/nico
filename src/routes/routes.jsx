@@ -16,7 +16,9 @@ import AssetManagement from '../pages/Assets';
 import AssetHistory from '../components/superadmin/AssetsHistory';
 import TicketsPage from '../pages/Tickets';
 import Maintenance from '../pages/Maintenance';
-import Jobcards from '../components/superadmin/Jobcards';
+import JobCards from '../pages/JobCards';
+import Chats from '../pages/Chats';
+
 
 
 
@@ -66,7 +68,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/jobcards",
-        element: <Jobcards/>,
+        element: <JobCards/>,
+      },
+      {
+        path: "/chats",
+        element: <Chats/>,
       },
       {
         path: "/user-management",

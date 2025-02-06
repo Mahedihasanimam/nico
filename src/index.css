@@ -251,14 +251,14 @@
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
   
   label {

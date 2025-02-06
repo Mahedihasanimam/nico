@@ -3,11 +3,12 @@ import { Tabs, Table, Input, Select } from "antd"
 import { SearchOutlined, RightOutlined } from "@ant-design/icons"
 import TicketModal from "../components/superadmin/TicketModal"
 import InspactionModal from "../components/superadmin/InspactionModal"
+import JobcardModal from "../components/superadmin/JobcardModal"
 
 
 const { TabPane } = Tabs
 
-const Inspectionsheets = () => {
+const JobCards = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedTicket, setSelectedTicket] = useState(null)
 
@@ -115,7 +116,7 @@ const Inspectionsheets = () => {
             </div>
 
             <Tabs defaultActiveKey="new">
-                <TabPane tab="New Sheets" key="new">
+                <TabPane tab="New Cards" key="new">
                     <Table
                         className="bg-white p-4 rounded-lg shadow-sm"
                         columns={columns}
@@ -131,9 +132,8 @@ const Inspectionsheets = () => {
                         })}
                     />
                 </TabPane>
-                <TabPane tab="Open Sheets" key="open">
+                <TabPane tab="Open Cards" key="open">
                     <Table
-                    
                         columns={columns}
                         dataSource={data}
                         pagination={{
@@ -147,7 +147,7 @@ const Inspectionsheets = () => {
                         })}
                     />
                 </TabPane>
-                <TabPane tab="Past Sheets" key="past">
+                <TabPane tab="Past Cards" key="past">
                     <Table
                         columns={columns}
                         dataSource={data}
@@ -164,10 +164,10 @@ const Inspectionsheets = () => {
                 </TabPane>
             </Tabs>
 
-            <InspactionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} ticket={selectedTicket} />
+            <JobcardModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} ticket={selectedTicket} />
         </div>
     )
 }
 
-export default Inspectionsheets
+export default JobCards
 
