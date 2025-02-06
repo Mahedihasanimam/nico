@@ -12,6 +12,12 @@ import Inspectionsheets from '../pages/Inspectionsheets';
 import TicketsActivity from '../components/superadmin/TicketsActivity';
 import InspactionAcvity from '../components/superadmin/InspactionAcvity';
 import JobCardsOverview from '../components/superadmin/JobCardsOverview';
+import AssetManagement from '../pages/Assets';
+import AssetHistory from '../components/superadmin/AssetsHistory';
+import TicketsPage from '../pages/Tickets';
+import Maintenance from '../pages/Maintenance';
+import Jobcards from '../components/superadmin/Jobcards';
+
 
 
 const router = createBrowserRouter([
@@ -25,12 +31,22 @@ const router = createBrowserRouter([
       },
       {
         path: "/assets",
-        element: <Assets/>,
+        element: <AssetManagement/>,
+      },
+      {
+        path: "/asset-history/:id",
+        element: <AssetHistory/>,
       },
       {
         path: "/tickets",
-        element: <Tickets/> ,
+        element: <TicketsPage/> ,
       },
+  
+      {
+        path: "/maintenance",
+        element: <Maintenance/> ,
+      },
+     
       {
         path: "/tickets-activity",
         element: <TicketsActivity/> ,
@@ -47,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/inspectionsheets",
         element: <Inspectionsheets/>,
+      },
+      {
+        path: "/jobcards",
+        element: <Jobcards/>,
       },
       {
         path: "/user-management",

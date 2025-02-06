@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts"
 import { ArrowLeft, Filter, RefreshCw } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
 const TicketsActivity = () => {
+    const navigate = useNavigate()
   const [dateRange, setDateRange] = useState({
     start: "",
     end: "",
@@ -29,10 +31,10 @@ const TicketsActivity = () => {
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <button className="rounded-full p-2 hover:bg-gray-200">
+          <button  onClick={() => navigate(-1)} className="rounded-full p-2 hover:bg-gray-200">
             <ArrowLeft className="h-6 w-6" />
           </button>
-          <h1 className="text-xl font-semibold">Tickets Activity</h1>
+          <h1  onClick={() => navigate(-1)} className="text-xl font-semibold">Tickets Activity</h1>
         </div>
 
         <div className="flex items-center gap-4">
