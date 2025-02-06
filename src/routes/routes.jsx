@@ -18,6 +18,7 @@ import TicketsPage from '../pages/Tickets';
 import Maintenance from '../pages/Maintenance';
 import JobCards from '../pages/JobCards';
 import Chats from '../pages/Chats';
+import ServiceProviders from '../pages/ServiceProviders';
 
 
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/inspectionsheets",
         element: <Inspectionsheets/>,
+      },
+      {
+        path: "/service-providers",
+        element: <ServiceProviders/>,
       },
       {
         path: "/jobcards",
