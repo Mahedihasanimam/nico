@@ -19,6 +19,8 @@ import Maintenance from '../pages/Maintenance';
 import JobCards from '../pages/JobCards';
 import Chats from '../pages/Chats';
 import ServiceProviders from '../pages/ServiceProviders';
+import Reports from '../pages/Reports';
+import AdminProfile from '../components/superadmin/AdminProfile';
 
 
 
@@ -76,8 +78,16 @@ const router = createBrowserRouter([
         element: <JobCards/>,
       },
       {
+        path: "/reports",
+        element: <Reports/>,
+      },
+      {
         path: "/chats",
         element: <Chats/>,
+      },
+      {
+        path: "/admin-profile",
+        element: <AdminProfile/>,
       },
       {
         path: "/user-management",

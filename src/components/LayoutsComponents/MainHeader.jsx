@@ -2,9 +2,13 @@ import { Button, Layout, theme } from 'antd';
 import { RxHamburgerMenu } from "react-icons/rx";
 const { Header } = Layout;
 import avater from '../../assets/avater.png'
+import { useNavigate } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const MainHeader = ({ setCollapsed, collapsed }) => {
+
+
+    const navigate = useNavigate();
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -39,7 +43,7 @@ const MainHeader = ({ setCollapsed, collapsed }) => {
 
                     </div>
 
-                    <div className='flex items-center space-x-2'>
+                    <div onClick={()=>navigate('/admin-profile')} className='flex items-center space-x-2 cursor-pointer'>
                         <div className='h-[42px] w-[42px] rounded-full pt-1 cursor-pointer'>
                             <img className='w-full' src={avater} alt="" />
                         </div>
