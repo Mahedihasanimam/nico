@@ -5,6 +5,7 @@ import { Input, Select, Button, Image } from "antd";
 import Swal from "sweetalert2";
 import JobcardModal from "../components/superadmin/JobcardModal";
 import ProvidersProfile from "../components/superadmin/ProvidersProfile";
+import OrganizationModal from "../components/superadmin/OrganizationModal";
 
 const { Option } = Select;
 
@@ -19,6 +20,9 @@ const MOCK_DATA = Array.from({ length: 7 }, (_, i) => ({
 export default function ServiceProviderTable() {
 
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [iseditDetailsModalopen, setiseditdetsilsModalopen] = useState(false);
+
+
   const [selectedItem, setSelectedItem] = useState(null);
 
 
@@ -53,6 +57,10 @@ const handleView = (item) => {
   setIsEditModalOpen(true);
 };
 
+const handleEdit = (item) => {
+  setSelectedItem(item);
+  setiseditdetsilsModalopen(true);
+};
 
 
   const handleDelete = (id) => {
@@ -149,7 +157,7 @@ const handleView = (item) => {
                       <button type="button" onClick={() => handleView(provider)} className="text-gray-400 hover:text-gray-600">
                         <Eye className="w-4 h-4" />
                       </button>
-                      <button className="text-gray-400 hover:text-gray-600">
+                      <button type="button" onClick={() => handleEdit(provider)} className="text-gray-400 hover:text-gray-600">
                         <Pencil className="w-4 h-4" />
                       </button>
                       <button type="button" onClick={() => handleDelete(provider.id)} className="text-red-400 hover:text-red-600">
@@ -195,6 +203,8 @@ const handleView = (item) => {
 
 
       <ProvidersProfile isOpen={isEditModalOpen} onClose={()=>setIsEditModalOpen(false)} ticket={selectedItem} />
+
+        <OrganizationModal isOpen={iseditDetailsModalopen} onClose={()=>setiseditdetsilsModalopen(false)} ticket={selectedItem} />
     </div>
   );
 }
