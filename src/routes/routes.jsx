@@ -43,7 +43,7 @@ const router = createBrowserRouter([
           { path: "/jobcards", element: <JobCards /> },
           { path: "/reports", element: <Reports /> },
           { path: "/chats", element: <Chats /> },
-          { path: "/admin-profile", element: <AdminProfile /> },
+          { path: "/profile", element: <AdminProfile /> },
           { path: "/user-management", element: <UserManagement /> },
         ],
       },
@@ -60,8 +60,10 @@ const router = createBrowserRouter([
           { path: "/jobcards-overview", element: <JobCardsOverview /> },
           { path: "/inspectionsheets", element: <SupportAgentInspaction /> },
           { path: "/create-inspection", element: <CreateInspectionPage/> },
+          { path: "/profile", element: <AdminProfile /> },
           { path: "/chats", element: <Chats /> },
           { path: "/reports", element: <Reports /> },
+          { path: "/jobcards", element: <JobCards /> },
         ],
       }
    

@@ -43,7 +43,7 @@ const MainHeader = ({ setCollapsed, collapsed }) => {
 
                     </div>
 
-                    <div onClick={()=>navigate('/admin-profile')} className='flex items-center space-x-2 cursor-pointer'>
+                    <div onClick={()=>navigate('/profile')} className='flex items-center space-x-2 cursor-pointer'>
                         <div className='h-[42px] w-[42px] rounded-full pt-1 cursor-pointer'>
                             <img className='w-full' src={avater} alt="" />
                         </div>

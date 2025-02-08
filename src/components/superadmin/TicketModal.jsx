@@ -1,10 +1,12 @@
 import { Modal, Input } from "antd"
 import { CopyOutlined, CloseOutlined } from "@ant-design/icons"
+import { useNavigate } from "react-router-dom"
 
 
 const { TextArea } = Input
 
 const TicketModal = ({ isOpen, onClose, ticket }) => {
+  const navigate =useNavigate();
   return (
     <Modal
       open={isOpen}
@@ -78,7 +80,7 @@ const TicketModal = ({ isOpen, onClose, ticket }) => {
 
         <div className="modal-footer">
           <button className="btn btn-outline">Send to Third-party Providers</button>
-          <button className="btn btn-primary">Create Inspection Sheet</button>
+          <button onClick={()=>navigate('/create-inspection')} className="btn btn-primary">Create Inspection Sheet</button>
         </div>
       </div>
     </Modal>
