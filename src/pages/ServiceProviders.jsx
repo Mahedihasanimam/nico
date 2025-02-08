@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Eye, Pencil, Trash2 } from "lucide-react";
 
 import { Input, Select, Button, Image } from "antd";
+import Swal from "sweetalert2";
+import JobcardModal from "../components/superadmin/JobcardModal";
+import ProvidersProfile from "../components/superadmin/ProvidersProfile";
 
 const { Option } = Select;
 
@@ -14,6 +17,11 @@ const MOCK_DATA = Array.from({ length: 7 }, (_, i) => ({
 }));
 
 export default function ServiceProviderTable() {
+
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("organization");
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +45,35 @@ export default function ServiceProviderTable() {
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedData = filteredData.slice(startIndex, startIndex + itemsPerPage);
+
+
+
+const handleView = (item) => {
+  setSelectedItem(item);
+  setIsEditModalOpen(true);
+};
+
+
+
+  const handleDelete = (id) => {
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Perform delete action here
+        console.log("Deleted item with ID:", id);
+      }
+    });
+
+   
+  };
 
   return (
     <div className="space-y-6">
@@ -78,9 +115,9 @@ export default function ServiceProviderTable() {
 
         {/* Table */}
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full bg-white">
             <thead>
-              <tr className="border-b bg-gray-50">
+              <tr className="border-b bg-white">
                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">ID</th>
                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">Provider Name</th>
                 <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">Organization</th>
@@ -90,7 +127,7 @@ export default function ServiceProviderTable() {
             </thead>
             <tbody className="divide-y">
               {paginatedData.map((provider, index) => (
-                <tr key={index} className="hover:bg-gray-50">
+                <tr key={index} className="hover:bg-gray-50 bg-white  ">
                   <td className="px-6 py-4 text-sm text-gray-500">{provider.id}</td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
@@ -109,13 +146,13 @@ export default function ServiceProviderTable() {
                   <td className="px-6 py-4 text-sm">{provider.location}</td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <button className="text-gray-400 hover:text-gray-600">
+                      <button type="button" onClick={() => handleView(provider)} className="text-gray-400 hover:text-gray-600">
                         <Eye className="w-4 h-4" />
                       </button>
                       <button className="text-gray-400 hover:text-gray-600">
                         <Pencil className="w-4 h-4" />
                       </button>
-                      <button className="text-red-400 hover:text-red-600">
+                      <button type="button" onClick={() => handleDelete(provider.id)} className="text-red-400 hover:text-red-600">
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
@@ -155,6 +192,9 @@ export default function ServiceProviderTable() {
           </button>
         </div>
       </div>
+
+
+      <ProvidersProfile isOpen={isEditModalOpen} onClose={()=>setIsEditModalOpen(false)} ticket={selectedItem} />
     </div>
   );
 }
