@@ -20,11 +20,22 @@ import SupportAgentDashboard from "../pages/SupportAgentDashboard";
 import SupportAgentTicket from "../pages/supportAgentTicket";
 import SupportAgentInspaction from "../pages/SupportAgentInspaction";
 import CreateInspectionPage from "../pages/CreateInspactionPage";
+import AuthLayout from "../layouts/AuthLayout";
+import Signup from "../pages/authentication/Signup";
+import Login from "../pages/authentication/Login";
+import ResetPassword from "../pages/authentication/ResetPassword";
+import OtpVerification from "../pages/authentication/OtpVerification";
+import CreateNewPassword from "../pages/authentication/CreateNewPassword";
+import NotificationsPage from "../pages/Notification";
+import LocationEmployeLayout from "../layouts/LocationEmployeLayout";
+import LocationEmployDashb from "../pages/LocationEmployDashb";
+import LocationEmloyeAsstsManage from "../pages/LocationEmloyeAsstsManage";
+import LocationEmplTickets from "../pages/LocationEmplTickets";
 
 // 🟢 Define User Role (Replace with Actual Authentication Logic)
-const isSuperAdmin = false; // Change this dynamically based on user role
-const isSupportAgent = true; // Change this dynamically based on user role
-
+const isSuperAdmin = false; 
+const isSupportAgent = false; 
+const LocationEmployee = true;
 const router = createBrowserRouter([
   isSuperAdmin && {
         path: "/",
@@ -45,6 +56,7 @@ const router = createBrowserRouter([
           { path: "/chats", element: <Chats /> },
           { path: "/profile", element: <AdminProfile /> },
           { path: "/user-management", element: <UserManagement /> },
+          {path:'/notification',element:<NotificationsPage/>},
         ],
       },
 
@@ -64,7 +76,42 @@ const router = createBrowserRouter([
           { path: "/chats", element: <Chats /> },
           { path: "/reports", element: <Reports /> },
           { path: "/jobcards", element: <JobCards /> },
+          {path:'/notification',element:<NotificationsPage/>},
         ],
+      },
+
+      LocationEmployee && {
+        path: "/",
+        element: <LocationEmployeLayout />,
+        children: [
+          { path: "/", element: <LocationEmployDashb/> },
+          { path: "/tickets", element: <LocationEmplTickets/> },
+          { path: "/assets", element: <LocationEmloyeAsstsManage /> },
+          { path: "/asset-history/:id", element: <AssetHistory /> },
+          { path: "/tickets-activity", element: <TicketsActivity /> },
+          { path: "/inspections-activity", element: <InspactionAcvity /> },
+          { path: "/jobcards-overview", element: <JobCardsOverview /> },
+          { path: "/inspectionsheets", element: <SupportAgentInspaction /> },
+          { path: "/create-inspection", element: <CreateInspectionPage/> },
+          { path: "/profile", element: <AdminProfile /> },
+          { path: "/chats", element: <Chats /> },
+          { path: "/reports", element: <Reports /> },
+          { path: "/jobcards", element: <JobCards /> },
+          {path:'/notification',element:<NotificationsPage/>},
+        ],
+      },
+
+      {
+        path: "/",
+        element: <AuthLayout/>,
+        children: [
+          { path: "/login", element: <Login /> },
+          { path: "/signup", element: <Signup /> },
+          { path: "/reset-password", element: <ResetPassword /> },
+          {path:'/otp-verification',element:<OtpVerification/>},
+          {path:'/create-new-password',element:<CreateNewPassword/>},
+       
+        ]
       }
    
 ]);
