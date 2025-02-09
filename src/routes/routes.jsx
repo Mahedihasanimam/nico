@@ -31,6 +31,8 @@ import LocationEmployeLayout from "../layouts/LocationEmployeLayout";
 import LocationEmployDashb from "../pages/LocationEmployDashb";
 import LocationEmloyeAsstsManage from "../pages/LocationEmloyeAsstsManage";
 import LocationEmplTickets from "../pages/LocationEmplTickets";
+import LocaEmployInspaction from "../pages/LocaEmployInspaction";
+import LocaJobCard from "../pages/LocaJobCard";
 
 // 🟢 Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
@@ -87,16 +89,19 @@ const router = createBrowserRouter([
           { path: "/", element: <LocationEmployDashb/> },
           { path: "/tickets", element: <LocationEmplTickets/> },
           { path: "/assets", element: <LocationEmloyeAsstsManage /> },
+          { path: "/inspectionsheets", element: <LocaEmployInspaction /> },
+
+
+
           { path: "/asset-history/:id", element: <AssetHistory /> },
           { path: "/tickets-activity", element: <TicketsActivity /> },
           { path: "/inspections-activity", element: <InspactionAcvity /> },
           { path: "/jobcards-overview", element: <JobCardsOverview /> },
-          { path: "/inspectionsheets", element: <SupportAgentInspaction /> },
           { path: "/create-inspection", element: <CreateInspectionPage/> },
           { path: "/profile", element: <AdminProfile /> },
           { path: "/chats", element: <Chats /> },
           { path: "/reports", element: <Reports /> },
-          { path: "/jobcards", element: <JobCards /> },
+          { path: "/jobcards", element: <LocaJobCard /> },
           {path:'/notification',element:<NotificationsPage/>},
         ],
       },

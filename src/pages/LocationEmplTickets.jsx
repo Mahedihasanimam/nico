@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Tabs, Table, Input, Select, Button } from "antd"
 import { SearchOutlined, RightOutlined } from "@ant-design/icons"
 import TicketModal from "../components/superadmin/TicketModal"
+import LocationEmpTicketModal from "../components/LocationEmploye/LocationEmpTicketModal"
 
 
 const { TabPane } = Tabs
@@ -149,7 +150,7 @@ const LocationEmplTickets = () => {
                 </TabPane>
             </Tabs>
 
-            <TicketModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} ticket={selectedTicket} />
+            <LocationEmpTicketModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} ticket={selectedTicket} />
         </div>
     )
 }

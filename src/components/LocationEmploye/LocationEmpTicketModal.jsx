@@ -26,7 +26,7 @@ const LocationEmpTicketModal = ({ isOpen, onClose, ticket }) => {
         <div className="form-group">
           <label>Ticket Number</label>
           <div className="input-with-copy">
-            <Input value="Auto generated" readOnly className="gray-bg" />
+            <Input style={{height:'44px',width:'100%'}}  value="Auto generated" readOnly className="gray-bg text-[#777777]" />
             <CopyOutlined className="copy-icon" />
           </div>
         </div>
@@ -35,14 +35,14 @@ const LocationEmpTicketModal = ({ isOpen, onClose, ticket }) => {
           <div className="form-group">
             <label>Asset</label>
             <div className="input-with-copy">
-              <Input value="Monitor" readOnly className="gray-bg" />
+              <Input style={{height:'44px',width:'100%'}} value="Monitor" readOnly className="gray-bg text-[#777777]" />
               <CopyOutlined className="copy-icon" />
             </div>
           </div>
           <div className="form-group">
             <label>Serial Number</label>
             <div className="input-with-copy">
-              <Input value="HFGS647HNSJU" readOnly className="gray-bg" />
+              <Input style={{height:'44px',width:'100%'}} value="HFGS647HNSJU" readOnly className="gray-bg text-[#777777]" />
               <CopyOutlined className="copy-icon" />
             </div>
           </div>
@@ -52,14 +52,14 @@ const LocationEmpTicketModal = ({ isOpen, onClose, ticket }) => {
           <div className="form-group">
             <label>Organization</label>
             <div className="input-with-copy">
-              <Input value="ViewSonic" readOnly className="gray-bg" />
+              <Input style={{height:'44px',width:'100%'}} value="ViewSonic" readOnly className="gray-bg text-[#777777]" />
               <CopyOutlined className="copy-icon" />
             </div>
           </div>
           <div className="form-group">
             <label>Location</label>
             <div className="input-with-copy">
-              <Input value="Rampura, Dhaka" readOnly className="gray-bg" />
+              <Input style={{height:'44px',width:'100%'}} value="Rampura, Dhaka" readOnly className="gray-bg text-[#777777]" />
               <CopyOutlined className="copy-icon" />
             </div>
           </div>
@@ -72,15 +72,15 @@ const LocationEmpTicketModal = ({ isOpen, onClose, ticket }) => {
               value="Lorem ipsum dolor sit amet consectetur. Leo ultrices quis et et quisque ut turpis. Pharetra massa volutpat ultrices in eros sit. Vulputate risus lobortis nunc tristique mattis imperdiet cursus. Sociis mauris varius amet bibendum."
               readOnly
               rows={4}
-              className="gray-bg"
+              className="gray-bg text-[#777777] ]"
             />
             <CopyOutlined className="copy-icon textarea-copy" />
           </div>
         </div>
 
         <div className="modal-footer">
-          <button className="btn btn-outline">Send to Third-party Providers</button>
-          <button onClick={()=>navigate('/create-inspection')} className="btn btn-primary">Create Inspection Sheet</button>
+          <button className="btn bg-secondary h-[44px] text-white  font-semibold">See inspection sheet</button>
+        
         </div>
       </div>
     </Modal>
