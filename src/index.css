@@ -343,3 +343,22 @@
     background-color: #ED1C24 !important;
     color: white !important;
 }
+
+/* Add these styles to customize the table appearance */
+.maintenance-table .ant-table-thead > tr > th {
+  background-color: #f3f4f6;
+  text-align: center;
+}
+
+.maintenance-table .ant-table-cell {
+  padding: 12px 8px !important;
+}
+
+.maintenance-table .ant-table-row:hover > td {
+  background-color: #f9fafb !important;
+}
+
+.maintenance-table .ant-table-cell-row-hover {
+  background-color: #f9fafb !important;
+}
+

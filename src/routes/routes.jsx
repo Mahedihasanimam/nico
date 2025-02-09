@@ -33,8 +33,9 @@ import LocationEmloyeAsstsManage from "../pages/LocationEmloyeAsstsManage";
 import LocationEmplTickets from "../pages/LocationEmplTickets";
 import LocaEmployInspaction from "../pages/LocaEmployInspaction";
 import LocaJobCard from "../pages/LocaJobCard";
+import LocationEmpMinatanence from "../pages/LocationEmpMinatanence";
 
-// 🟢 Define User Role (Replace with Actual Authentication Logic)
+// Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
 const isSupportAgent = false; 
 const LocationEmployee = true;
@@ -90,8 +91,9 @@ const router = createBrowserRouter([
           { path: "/tickets", element: <LocationEmplTickets/> },
           { path: "/assets", element: <LocationEmloyeAsstsManage /> },
           { path: "/inspectionsheets", element: <LocaEmployInspaction /> },
+          { path: "/jobcards", element: <LocaJobCard /> },
 
-
+          { path: "/maintenance", element: <LocationEmpMinatanence /> },
 
           { path: "/asset-history/:id", element: <AssetHistory /> },
           { path: "/tickets-activity", element: <TicketsActivity /> },
@@ -100,8 +102,7 @@ const router = createBrowserRouter([
           { path: "/create-inspection", element: <CreateInspectionPage/> },
           { path: "/profile", element: <AdminProfile /> },
           { path: "/chats", element: <Chats /> },
-          { path: "/reports", element: <Reports /> },
-          { path: "/jobcards", element: <LocaJobCard /> },
+     
           {path:'/notification',element:<NotificationsPage/>},
         ],
       },
