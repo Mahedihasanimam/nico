@@ -2,7 +2,7 @@ import { Modal, Input, Upload, Button } from "antd";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
-const OrganizationModal = ({ isOpen, onClose }) => {
+const EditThirdPartyProfile = ({ isOpen, onClose }) => {
   const [fileList, setFileList] = useState([]);
 
   const handleUpload = ({ fileList }) => {
@@ -20,7 +20,7 @@ const OrganizationModal = ({ isOpen, onClose }) => {
     >
       <div className="p-6 bg-white rounded-lg">
         {/* Header */}
-        <h2 className="text-lg font-semibold text-center">Add Organization</h2>
+        <h2 className="text-lg font-semibold text-center">Edit ThirdParty</h2>
 
         {/* Logo Upload */}
         <div className="flex flex-col items-center my-4">
@@ -75,4 +75,4 @@ const OrganizationModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default OrganizationModal;
+export default EditThirdPartyProfile;

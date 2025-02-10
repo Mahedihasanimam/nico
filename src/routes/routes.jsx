@@ -34,12 +34,18 @@ import LocationEmplTickets from "../pages/LocationEmplTickets";
 import LocaEmployInspaction from "../pages/LocaEmployInspaction";
 import LocaJobCard from "../pages/LocaJobCard";
 import LocationEmpMinatanence from "../pages/LocationEmpMinatanence";
+import ThirdpartyLayout from "../layouts/ThirdpartyLayout";
+import ThirdPartyTickets from "../pages/ThirdPartyTickets";
+import ThirdPartyServiceProvider from "../pages/ThirdPartyServiceProvider";
 
 // Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
 const isSupportAgent = false; 
-const LocationEmployee = true;
+const LocationEmployee = false;
+const thirdparty = true;
 const router = createBrowserRouter([
+
+  // SUPER ADMIN-DASHBOARD ROUTES 
   isSuperAdmin && {
         path: "/",
         element: <SuperAdmin />,
@@ -63,7 +69,7 @@ const router = createBrowserRouter([
         ],
       },
 
-
+  // SUPPORT AGENT-DASHBOARD ROUTES 
     isSupportAgent && {
         path: "/",
         element: <Supportagent />,
@@ -83,6 +89,7 @@ const router = createBrowserRouter([
         ],
       },
 
+      // LOCATION EMPLOYEE-DASHBOARD ROUTES
       LocationEmployee && {
         path: "/",
         element: <LocationEmployeLayout />,
@@ -105,6 +112,16 @@ const router = createBrowserRouter([
      
           {path:'/notification',element:<NotificationsPage/>},
         ],
+      },
+
+      // THIRD PARTY-DASHBOARD ROUTES
+      thirdparty && {
+        path: "/",
+        element: <ThirdpartyLayout />,
+        children: [
+          { path: "/tickets", element: <ThirdPartyTickets/> },
+          { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
+        ]
       },
 
       {
