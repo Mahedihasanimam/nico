@@ -37,6 +37,8 @@ import LocationEmpMinatanence from "../pages/LocationEmpMinatanence";
 import ThirdpartyLayout from "../layouts/ThirdpartyLayout";
 import ThirdPartyTickets from "../pages/ThirdPartyTickets";
 import ThirdPartyServiceProvider from "../pages/ThirdPartyServiceProvider";
+import ThirdpartyInspaction from "../pages/ThirdpartyInspaction";
+import ThirdPartyJobcards from "../pages/ThirdPartyJobcards";
 
 // Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
@@ -66,6 +68,7 @@ const router = createBrowserRouter([
           { path: "/profile", element: <AdminProfile /> },
           { path: "/user-management", element: <UserManagement /> },
           {path:'/notification',element:<NotificationsPage/>},
+          { path: "/create-inspection", element: <CreateInspectionPage/> },
         ],
       },
 
@@ -121,8 +124,14 @@ const router = createBrowserRouter([
         children: [
           { path: "/tickets", element: <ThirdPartyTickets/> },
           { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
+          { path: "/profile", element: <AdminProfile /> },
+          {path:'/notification',element:<NotificationsPage/>},
+          { path: "/chats", element: <Chats /> },
+          { path: "/inspectionsheets", element: <ThirdpartyInspaction /> },
+          { path: "/jobcards", element: <ThirdPartyJobcards /> },
         ]
       },
+      
 
       {
         path: "/",

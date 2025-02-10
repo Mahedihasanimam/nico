@@ -35,11 +35,11 @@ export default function ThirdPartyServiceProvider() {
   const itemsPerPage = 8;
 
   const tabs = [
-    { id: "organization", label: "Organization" },
+  
     { id: "support-agent", label: "Support Agent" },
     { id: "location-employees", label: "Location Employees" },
     { id: "technicians", label: "Technicians" },
-    { id: "third-party", label: "Third Party" },
+  
   ];
 
   const filteredData = MOCK_DATA.filter((item) =>
@@ -101,7 +101,7 @@ export default function ThirdPartyServiceProvider() {
             <Option value="name">Sort by Name</Option>
             <Option value="organization">Sort by Organization</Option>
           </Select>
-          <Button type="primary">+ Add</Button>
+          <Button onClick={handleEdit} type="primary">+ Add</Button>
         </div>
       </div>
 
@@ -158,8 +158,10 @@ export default function ThirdPartyServiceProvider() {
                     <div className="flex items-center gap-3">
                       <button type="button" onClick={() => handleView(provider)} className="text-gray-400 hover:text-gray-600">
                         <svg width="29" height="19" viewBox="0 0 29 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14.2502 13.2992C16.3489 13.2992 18.0502 11.5979 18.0502 9.49922C18.0502 7.40054 16.3489 5.69922 14.2502 5.69922C12.1515 5.69922 10.4502 7.40054 10.4502 9.49922C10.4502 11.5979 12.1515 13.2992 14.2502 13.2992Z" fill="#F96D10" />
                           <path d="M22.4924 2.68256C19.8966 0.9025 17.1184 0 14.2357 0C11.6417 0 9.11287 0.771875 6.71947 2.28475C4.30587 3.81366 1.93978 6.59062 0 9.5C1.56869 12.1125 3.7145 14.7986 5.94937 16.3388C8.51319 18.1046 11.3008 19 14.2357 19C17.1451 19 19.9268 18.1052 22.5067 16.3406C24.7778 14.7844 26.939 12.1018 28.5 9.5C26.9337 6.92134 24.7653 4.24175 22.4924 2.68256ZM14.25 15.2C13.1226 15.2 12.0206 14.8657 11.0832 14.2394C10.1459 13.6131 9.41531 12.7228 8.98389 11.6813C8.55247 10.6398 8.43959 9.49368 8.65952 8.38799C8.87946 7.28229 9.42233 6.26665 10.2195 5.46949C11.0167 4.67233 12.0323 4.12946 13.138 3.90952C14.2437 3.68959 15.3898 3.80247 16.4313 4.23389C17.4728 4.66531 18.3631 5.39589 18.9894 6.33325C19.6157 7.27061 19.95 8.37265 19.95 9.5C19.9483 11.0112 19.3472 12.46 18.2786 13.5286C17.21 14.5972 15.7612 15.1983 14.25 15.2Z" fill="#F96D10" />
                         </svg>
+
 
                       </button>
                       <button type="button" onClick={() => handleEdit(provider)} className="text-gray-400 hover:text-gray-600">
