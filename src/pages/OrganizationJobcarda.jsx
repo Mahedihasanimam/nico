@@ -1,16 +1,18 @@
 import { useState } from "react"
-import { Tabs, Table, Input, Select } from "antd"
+import { Tabs, Table, Input, Select, Button } from "antd"
 import { SearchOutlined, RightOutlined } from "@ant-design/icons"
 import TicketModal from "../components/superadmin/TicketModal"
 import InspactionModal from "../components/superadmin/InspactionModal"
 import JobcardModal from "../components/superadmin/JobcardModal"
 import ThirdPartyJobcard from "../components/thirdparty/ThirdPartyJobcard"
 import OrganizationJobcard from "../components/organization/OrganizationJobcard"
+import { useNavigate } from "react-router-dom"
 
 
 const { TabPane } = Tabs
 
 const OrganizationJobcarda = () => {
+    const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedTicket, setSelectedTicket] = useState(null)
 
@@ -104,13 +106,18 @@ const OrganizationJobcarda = () => {
         setSelectedTicket(record)
         setIsModalOpen(true)
     }
-
+    const handleticketacvity= ()=>{
+        navigate('/jobcards-overview')
+    }
     return (
         <div className="tickets-page">
             <div className="header">
                 <div className="search-section">
                     <Input style={{height:'44px',width:'100%'}} prefix={<SearchOutlined />} placeholder="Search tickets..." className="search-input" />
                 </div>
+                <Button onClick={handleticketacvity} type="primary" size="large" className="text-lg font-semibold mr-4">
+                See Analytics
+                </Button>
                 <Select style={{height:'44px'}} defaultValue="Dhaka" className="location-select">
                     <Select.Option value="Dhaka">Dhaka</Select.Option>
                     <Select.Option value="Chittagong">Chittagong</Select.Option>
