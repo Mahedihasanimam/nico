@@ -46,6 +46,7 @@ import OrganizationTickets from "../pages/OrganizationTickets";
 import OrganizationTicketsActivity from "../components/organization/OrganizationTicketsActivity";
 import OrganizaInspactionAcvity from "../components/organization/OrganizaInspactionAcvity";
 import OrganizInspaction from "../pages/OrganizInspaction";
+import OrganizationJobcarda from "../pages/OrganizationJobcarda";
 
 // Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
@@ -152,10 +153,11 @@ const router = createBrowserRouter([
           { path: "/inspectionsheets", element: <OrganizInspaction /> },
           { path: "/inspections-activity", element: <OrganizaInspactionAcvity /> },
           { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
+          { path: "/jobcards", element: <OrganizationJobcarda /> },
+          
           { path: "/profile", element: <AdminProfile /> },
           {path:'/notification',element:<NotificationsPage/>},
           { path: "/chats", element: <Chats /> },
-          { path: "/jobcards", element: <ThirdPartyJobcards /> },
         ]
       },
 
