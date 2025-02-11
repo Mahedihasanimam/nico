@@ -66,7 +66,6 @@ export default function ThirdPartyServiceProvider() {
 
 
   const handleDelete = (id) => {
-
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -95,6 +94,7 @@ export default function ThirdPartyServiceProvider() {
           onChange={(e) => setSearchQuery(e.target.value)}
           className="max-w-xs"
         />
+        
         <div className="flex items-center gap-4">
           <Select value={sortBy} onChange={setSortBy} className="w-32">
             <Option value="id">Sort by ID</Option>

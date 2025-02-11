@@ -39,12 +39,14 @@ import ThirdPartyTickets from "../pages/ThirdPartyTickets";
 import ThirdPartyServiceProvider from "../pages/ThirdPartyServiceProvider";
 import ThirdpartyInspaction from "../pages/ThirdpartyInspaction";
 import ThirdPartyJobcards from "../pages/ThirdPartyJobcards";
+import OrganizationLayout from "../layouts/OrganizationLayout";
 
 // Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
 const isSupportAgent = false; 
 const LocationEmployee = false;
-const thirdparty = true;
+const thirdparty = false;
+const organization = true;
 const router = createBrowserRouter([
 
   // SUPER ADMIN-DASHBOARD ROUTES 
@@ -116,7 +118,6 @@ const router = createBrowserRouter([
           {path:'/notification',element:<NotificationsPage/>},
         ],
       },
-
       // THIRD PARTY-DASHBOARD ROUTES
       thirdparty && {
         path: "/",
@@ -132,6 +133,20 @@ const router = createBrowserRouter([
         ]
       },
       
+      organization && {
+        path: "/",
+        element: <OrganizationLayout />,
+        children: [
+          { path: "/", element: <LocationEmployDashb/> },
+          { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
+          { path: "/profile", element: <AdminProfile /> },
+          {path:'/notification',element:<NotificationsPage/>},
+          { path: "/chats", element: <Chats /> },
+          { path: "/inspectionsheets", element: <ThirdpartyInspaction /> },
+          { path: "/jobcards", element: <ThirdPartyJobcards /> },
+        ]
+      },
+
 
       {
         path: "/",
