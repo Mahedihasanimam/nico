@@ -43,6 +43,9 @@ import OrganizationLayout from "../layouts/OrganizationLayout";
 import OrganizationDashbord from "../pages/OrganizationDashbord";
 import OrganizationAssets from "../pages/OrganizationAssets";
 import OrganizationTickets from "../pages/OrganizationTickets";
+import OrganizationTicketsActivity from "../components/organization/OrganizationTicketsActivity";
+import OrganizaInspactionAcvity from "../components/organization/OrganizaInspactionAcvity";
+import OrganizInspaction from "../pages/OrganizInspaction";
 
 // Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
@@ -113,6 +116,7 @@ const router = createBrowserRouter([
           { path: "/asset-history/:id", element: <AssetHistory /> },
           { path: "/tickets-activity", element: <TicketsActivity /> },
           { path: "/inspections-activity", element: <InspactionAcvity /> },
+          
           { path: "/jobcards-overview", element: <JobCardsOverview /> },
           { path: "/create-inspection", element: <CreateInspectionPage/> },
           { path: "/profile", element: <AdminProfile /> },
@@ -144,12 +148,13 @@ const router = createBrowserRouter([
           { path: "/tickets", element: <OrganizationTickets/> },
           { path: "/assets", element: <OrganizationAssets /> },
           { path: "/asset-history/:id", element: <AssetHistory /> },
-          { path: "/tickets-activity", element: <TicketsActivity /> },
+          { path: "/tickets-activity", element: <OrganizationTicketsActivity /> },
+          { path: "/inspectionsheets", element: <OrganizInspaction /> },
+          { path: "/inspections-activity", element: <OrganizaInspactionAcvity /> },
           { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
           { path: "/profile", element: <AdminProfile /> },
           {path:'/notification',element:<NotificationsPage/>},
           { path: "/chats", element: <Chats /> },
-          { path: "/inspectionsheets", element: <ThirdpartyInspaction /> },
           { path: "/jobcards", element: <ThirdPartyJobcards /> },
         ]
       },
