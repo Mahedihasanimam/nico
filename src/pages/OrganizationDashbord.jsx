@@ -2,10 +2,11 @@
 
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
-import { FileText, Ticket, BriefcaseIcon, ClipboardCheck } from "lucide-react"
+import { FileText, Ticket, BriefcaseIcon, ClipboardCheck, ArrowLeft, Printer } from "lucide-react"
 import { Button, Card, DatePicker, Form, Input, Modal, Select } from "antd"
 import { useState } from "react"
 import TextArea from "antd/es/input/TextArea"
+import { IoPlayBackOutline } from "react-icons/io5"
 
 const overviewData = [
   {
@@ -86,6 +87,7 @@ export default function OrganizationDashbord() {
 
 
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isprinmodalopen, setispringmodalopen] = useState(false)
   const [form] = Form.useForm()
 
   const showModal = () => {
@@ -97,12 +99,25 @@ export default function OrganizationDashbord() {
     form.resetFields()
   }
 
+
+
+
+  const handleprinmodal = () => {
+    setIsModalOpen(false)
+    setispringmodalopen(true)
+  }
+  const handleprinmodalcancel = () => {
+    setIsModalOpen(false)
+    setispringmodalopen(false)
+  }
   const onFinish = (values) => {
     console.log("Form values:", values)
     setIsModalOpen(false)
     form.resetFields()
   }
-
+  const handlePrint = () => {
+    window.print()
+  }
   return (
     <div className="p-6 space-y-6">
       <div className="flex justify-between items-center">
@@ -252,6 +267,7 @@ export default function OrganizationDashbord() {
 
           <Form.Item>
             <Button
+              onClick={handleprinmodal}
               type="primary"
               htmlType="submit"
               style={{
@@ -264,6 +280,90 @@ export default function OrganizationDashbord() {
             </Button>
           </Form.Item>
         </Form>
+      </Modal>
+
+      <Modal
+
+
+        open={isprinmodalopen}
+        onCancel={handleprinmodalcancel}
+        footer={null}
+        width={800}
+      >
+        <div className="max-w-3xl">
+          <div>
+            <div className="flex items-center gap-4">
+              <span className="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
+                <ArrowLeft className="w-4 h-4" />
+              </span>
+              <h1 className="text-lg font-semibold">Report For Standards (CHSE2019/USA)</h1>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 py-4">
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium">Asset Name:</h3>
+                <p className="text-gray-600">ViewSonic</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Asset Status:</h3>
+                <p className="text-gray-600">Active</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Last Maintenance Date:</h3>
+                <p className="text-gray-600">12/15/2024</p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-medium">Serial Number:</h3>
+                <p className="text-gray-600">HDS6265VNJE</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Serial Location:</h3>
+                <p className="text-gray-600">Banasree</p>
+              </div>
+              <div>
+                <h3 className="font-medium">Technician Name:</h3>
+                <p className="text-gray-600">Md. Abid</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="font-medium">Report For:</h3>
+            <p className="text-gray-600">Lorem ipsum dolor sit....</p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="font-medium">Report Details</h3>
+            <p className="text-gray-600">
+              Lorem ipsum dolor sit amet consectetur. Mauris ipsum amet sed sapien vulputate at senectus. Pretium pretium
+              vel aenean blandit amet erat. Quam fringilla ridiculus a a tellus pharetra vitae. Posuere ullamcorper sed
+              sed purus ipsum purus nisl integer in. Ultricies nec viverra lacus eget ut. Adipiscing commodo morbi nunc
+              amet. Justo justo nunc gravida leo. Ipsum vulputate sit magnis velit. Orci neque diam non quis.
+            </p>
+            <p className="text-gray-600">
+              Venenatis viverra nisi orci pretium porttitor venenatis arcu sed ultrices. Bibendum feugiat faucibus tellus
+              cursus sed vestibulum vestibulum amet rhoncus. Nibh condimentum in mauris sem tellus semper amet ut. Eget
+              diam diam platea tortor ut tellus velit gravida. Orci ullamcorper pretium pharetra accumsan in erat faucibus
+              habitant. Lectus a curabitur volutpat mi euismod.
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <Button  onClick={handlePrint}   style={{backgroundColor: "#ED1C24",color:"white"}} className="w-fit h-[44px] text-[18px] font-semibold text-white mt-4  bg-[#ED1C24] hover:bg-[#ED1C24]">
+
+              Print Report
+              <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.6778 5.24896H5.52806V0H21.6778V5.24896ZM22.6726 12.188C23.1302 12.188 23.5135 12.032 23.8225 11.72C24.1315 11.408 24.2865 11.0223 24.2876 10.5629C24.2887 10.1036 24.1337 9.71735 23.8225 9.40425C23.5114 9.09116 23.1281 8.93515 22.6726 8.93623C22.2172 8.93731 21.8334 9.09332 21.5212 9.40425C21.2089 9.71518 21.0544 10.1014 21.0577 10.5629C21.0609 11.0244 21.2154 11.4101 21.5212 11.72C21.8269 12.0298 22.2108 12.1858 22.6726 12.188ZM20.0628 23.3749V16.0004H7.14304V23.3749H20.0628ZM21.6778 25H5.52806V18.4997H0V9.75039C0 8.82952 0.310613 8.05761 0.931841 7.43467C1.55307 6.81173 2.31911 6.49972 3.22995 6.49863H23.9759C24.8911 6.49863 25.6582 6.81065 26.2773 7.43467C26.8963 8.0587 27.2059 8.83006 27.2059 9.74876V18.4997H21.6778V25Z" fill="white" />
+              </svg>
+
+            </Button>
+          </div>
+        </div>
+
       </Modal>
     </div>
   )
