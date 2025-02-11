@@ -42,6 +42,7 @@ import ThirdPartyJobcards from "../pages/ThirdPartyJobcards";
 import OrganizationLayout from "../layouts/OrganizationLayout";
 import OrganizationDashbord from "../pages/OrganizationDashbord";
 import OrganizationAssets from "../pages/OrganizationAssets";
+import OrganizationTickets from "../pages/OrganizationTickets";
 
 // Define User Role (Replace with Actual Authentication Logic)
 const isSuperAdmin = false; 
@@ -140,10 +141,10 @@ const router = createBrowserRouter([
         element: <OrganizationLayout />,
         children: [
           { path: "/", element: <OrganizationDashbord/> },
-          { path: "/tickets", element: <ThirdPartyTickets/> },
+          { path: "/tickets", element: <OrganizationTickets/> },
           { path: "/assets", element: <OrganizationAssets /> },
           { path: "/asset-history/:id", element: <AssetHistory /> },
-
+          { path: "/tickets-activity", element: <TicketsActivity /> },
           { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
           { path: "/profile", element: <AdminProfile /> },
           {path:'/notification',element:<NotificationsPage/>},
