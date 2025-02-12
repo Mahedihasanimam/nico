@@ -144,7 +144,7 @@ const navigate = useNavigate()
                 style={{ backgroundColor: "#ED1C24",color:"white",fontSize:"16px",border:"none" }}
                      
                     className="fixed bottom-6 h-[50px] right-12  text-white px-6 py-3 rounded-lg shadow-lg"
-                    onClick={()=>navigate("/create-inspection")}
+                    onClick={()=>navigate("create-inspection")}
                 >
                     Create Combined Inspection Sheets
                 </Button>

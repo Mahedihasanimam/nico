@@ -35,9 +35,9 @@ const Statistics = () => (
       <Select options={["Weekly", "Monthly", "Yearly"]} />
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <DonutChart title="Ticket Status" staticsLink="/tickets-activity" data={ticketStatusData} />
-      <DonutChart title="Inspections" staticsLink="/inspections-activity" data={inspectionsData} />
-      <DonutChart title="Job Card Progress" staticsLink="/jobcards-overview" data={jobCardProgressData} />
+      <DonutChart title="Ticket Status" staticsLink="tickets-activity" data={ticketStatusData} />
+      <DonutChart title="Inspections" staticsLink="inspections-activity" data={inspectionsData} />
+      <DonutChart title="Job Card Progress" staticsLink="jobcards-overview" data={jobCardProgressData} />
       <DonutChart title="Asset Status" staticsLink="#" data={assetStatusData} />
     </div>
   </div>

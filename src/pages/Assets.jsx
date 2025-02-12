@@ -110,7 +110,7 @@ const AssetManagement = () => {
   ]
 
   const handleContractClick = (assetId) => {
-    navigate(`/asset-history/${assetId}`)
+    navigate(`asset-history/${assetId}`)
   }
   const handleEditClick = (assetId) => {
     // navigate(`/edit-asset/${assetId}`)

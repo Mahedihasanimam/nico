@@ -80,7 +80,7 @@ const  TicketModal = ({ isOpen, onClose, ticket }) => {
 
         <div className="modal-footer">
           <button className="btn btn-outline">Send to Third-party Providers</button>
-          <button onClick={()=>navigate('/create-inspection')} className="btn btn-primary">Create Inspection Sheet</button>
+          <button onClick={()=>navigate('create-inspection')} className="btn btn-primary">Create Inspection Sheet</button>
         </div>
       </div>
     </Modal>
