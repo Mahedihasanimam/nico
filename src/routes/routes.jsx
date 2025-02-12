@@ -105,28 +105,25 @@ const router = createBrowserRouter([
   },
 
   // LOCATION EMPLOYEE-DASHBOARD ROUTES
-  LocationEmployee && {
-    path: "/",
+{
+    path: "/location-employee",
     element: <LocationEmployeLayout />,
     children: [
-      { path: "/", element: <LocationEmployDashb /> },
-      { path: "/tickets", element: <LocationEmplTickets /> },
-      { path: "/assets", element: <LocationEmloyeAsstsManage /> },
-      { path: "/inspectionsheets", element: <LocaEmployInspaction /> },
-      { path: "/jobcards", element: <LocaJobCard /> },
+      { path: "", element: <LocationEmployDashb /> },
+      { path: "tickets", element: <LocationEmplTickets /> },
+      { path: "assets", element: <LocationEmloyeAsstsManage /> },
+      { path: "inspectionsheets", element: <LocaEmployInspaction /> },
+      { path: "jobcards", element: <LocaJobCard /> },
+      { path: "maintenance", element: <LocationEmpMinatanence /> },
+      { path: "assets/asset-history/:id", element: <AssetHistory /> },
+      { path: "tickets-activity", element: <TicketsActivity /> },
+      { path: "inspections-activity", element: <InspactionAcvity /> },
+      { path: "jobcards-overview", element: <JobCardsOverview /> },
+      { path: "create-inspection", element: <CreateInspectionPage /> },
+      { path: "profile", element: <AdminProfile /> },
+      { path: "chats", element: <Chats /> },
 
-      { path: "/maintenance", element: <LocationEmpMinatanence /> },
-
-      { path: "/asset-history/:id", element: <AssetHistory /> },
-      { path: "/tickets-activity", element: <TicketsActivity /> },
-      { path: "/inspections-activity", element: <InspactionAcvity /> },
-
-      { path: "/jobcards-overview", element: <JobCardsOverview /> },
-      { path: "/create-inspection", element: <CreateInspectionPage /> },
-      { path: "/profile", element: <AdminProfile /> },
-      { path: "/chats", element: <Chats /> },
-
-      { path: '/notification', element: <NotificationsPage /> },
+      { path: 'notification', element: <NotificationsPage /> },
     ],
   },
   // THIRD PARTY-DASHBOARD ROUTES
