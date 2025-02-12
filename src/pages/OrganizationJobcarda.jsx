@@ -107,7 +107,7 @@ const OrganizationJobcarda = () => {
         setIsModalOpen(true)
     }
     const handleticketacvity= ()=>{
-        navigate('/jobcards-overview')
+        navigate('jobcards-overview')
     }
     return (
         <div className="tickets-page">

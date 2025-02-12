@@ -92,7 +92,7 @@ const OrganizationTickets = () => {
     }
 
 const handleticketacvity= ()=>{
-    navigate('/tickets-activity')
+    navigate('tickets-activity')
 }
 
     return (

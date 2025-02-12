@@ -122,7 +122,7 @@ const OrganizationAssets = () => {
   };
 
   const handleContractClick = (assetId) => {
-    navigate(`/asset-history/${assetId}`)
+    navigate(`asset-history/${assetId}`)
   }
 
 

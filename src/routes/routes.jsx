@@ -52,133 +52,132 @@ import OrganizMaintenance from "../pages/OrganizMaintenance";
 import OrgserviceProvider from "../pages/OrgserviceProvider";
 
 // Define User Role (Replace with Actual Authentication Logic)
-const isSuperAdmin = false; 
-const isSupportAgent = false; 
+const isSuperAdmin = false;
+const isSupportAgent = false;
 const LocationEmployee = false;
-const thirdparty = false;
-const organization = true;
+const thirdparty = true;
+const organization = false;
 const router = createBrowserRouter([
 
   // SUPER ADMIN-DASHBOARD ROUTES 
   isSuperAdmin && {
-        path: "/",
-        element: <SuperAdmin />,
-        children: [
-          { path: "/", element: <Dashboard /> },
-          { path: "/assets", element: <AssetManagement /> },
-          { path: "/asset-history/:id", element: <AssetHistory /> },
-          { path: "/tickets", element: <TicketsPage /> },
-          { path: "/maintenance", element: <Maintenance /> },
-          { path: "/tickets-activity", element: <TicketsActivity /> },
-          { path: "/inspections-activity", element: <InspactionAcvity /> },
-          { path: "/jobcards-overview", element: <JobCardsOverview /> },
-          { path: "/inspectionsheets", element: <Inspectionsheets /> },
-          { path: "/service-providers", element: <ServiceProviders /> },
-          { path: "/jobcards", element: <JobCards /> },
-          { path: "/reports", element: <Reports /> },
-          { path: "/chats", element: <Chats /> },
-          { path: "/profile", element: <AdminProfile /> },
-          { path: "/user-management", element: <UserManagement /> },
-          {path:'/notification',element:<NotificationsPage/>},
-          { path: "/create-inspection", element: <CreateInspectionPage/> },
-        ],
-      },
+    path: "/",
+    element: <SuperAdmin />,
+    children: [
+      { path: "/", element: <Dashboard /> },
+      { path: "/assets", element: <AssetManagement /> },
+      { path: "/asset-history/:id", element: <AssetHistory /> },
+      { path: "/tickets", element: <TicketsPage /> },
+      { path: "/maintenance", element: <Maintenance /> },
+      { path: "/tickets-activity", element: <TicketsActivity /> },
+      { path: "/inspections-activity", element: <InspactionAcvity /> },
+      { path: "/jobcards-overview", element: <JobCardsOverview /> },
+      { path: "/inspectionsheets", element: <Inspectionsheets /> },
+      { path: "/service-providers", element: <ServiceProviders /> },
+      { path: "/jobcards", element: <JobCards /> },
+      { path: "/reports", element: <Reports /> },
+      { path: "/chats", element: <Chats /> },
+      { path: "/profile", element: <AdminProfile /> },
+      { path: "/user-management", element: <UserManagement /> },
+      { path: '/notification', element: <NotificationsPage /> },
+      { path: "/create-inspection", element: <CreateInspectionPage /> },
+    ],
+  },
 
   // SUPPORT AGENT-DASHBOARD ROUTES 
-    isSupportAgent && {
-        path: "/",
-        element: <Supportagent />,
-        children: [
-          { path: "/", element: <SupportAgentDashboard /> },
-          { path: "/tickets", element: <SupportAgentTicket/> },
-          { path: "/tickets-activity", element: <TicketsActivity /> },
-          { path: "/inspections-activity", element: <InspactionAcvity /> },
-          { path: "/jobcards-overview", element: <JobCardsOverview /> },
-          { path: "/inspectionsheets", element: <SupportAgentInspaction /> },
-          { path: "/create-inspection", element: <CreateInspectionPage/> },
-          { path: "/profile", element: <AdminProfile /> },
-          { path: "/chats", element: <Chats /> },
-          { path: "/reports", element: <Reports /> },
-          { path: "/jobcards", element: <JobCards /> },
-          {path:'/notification',element:<NotificationsPage/>},
-        ],
-      },
+  isSupportAgent && {
+    path: "/",
+    element: <Supportagent />,
+    children: [
+      { path: "/", element: <SupportAgentDashboard /> },
+      { path: "/tickets", element: <SupportAgentTicket /> },
+      { path: "/tickets-activity", element: <TicketsActivity /> },
+      { path: "/inspections-activity", element: <InspactionAcvity /> },
+      { path: "/jobcards-overview", element: <JobCardsOverview /> },
+      { path: "/inspectionsheets", element: <SupportAgentInspaction /> },
+      { path: "/create-inspection", element: <CreateInspectionPage /> },
+      { path: "/profile", element: <AdminProfile /> },
+      { path: "/chats", element: <Chats /> },
+      { path: "/reports", element: <Reports /> },
+      { path: "/jobcards", element: <JobCards /> },
+      { path: '/notification', element: <NotificationsPage /> },
+    ],
+  },
 
-      // LOCATION EMPLOYEE-DASHBOARD ROUTES
-      LocationEmployee && {
-        path: "/",
-        element: <LocationEmployeLayout />,
-        children: [
-          { path: "/", element: <LocationEmployDashb/> },
-          { path: "/tickets", element: <LocationEmplTickets/> },
-          { path: "/assets", element: <LocationEmloyeAsstsManage /> },
-          { path: "/inspectionsheets", element: <LocaEmployInspaction /> },
-          { path: "/jobcards", element: <LocaJobCard /> },
+  // LOCATION EMPLOYEE-DASHBOARD ROUTES
+  LocationEmployee && {
+    path: "/",
+    element: <LocationEmployeLayout />,
+    children: [
+      { path: "/", element: <LocationEmployDashb /> },
+      { path: "/tickets", element: <LocationEmplTickets /> },
+      { path: "/assets", element: <LocationEmloyeAsstsManage /> },
+      { path: "/inspectionsheets", element: <LocaEmployInspaction /> },
+      { path: "/jobcards", element: <LocaJobCard /> },
 
-          { path: "/maintenance", element: <LocationEmpMinatanence /> },
+      { path: "/maintenance", element: <LocationEmpMinatanence /> },
 
-          { path: "/asset-history/:id", element: <AssetHistory /> },
-          { path: "/tickets-activity", element: <TicketsActivity /> },
-          { path: "/inspections-activity", element: <InspactionAcvity /> },
-          
-          { path: "/jobcards-overview", element: <JobCardsOverview /> },
-          { path: "/create-inspection", element: <CreateInspectionPage/> },
-          { path: "/profile", element: <AdminProfile /> },
-          { path: "/chats", element: <Chats /> },
-     
-          {path:'/notification',element:<NotificationsPage/>},
-        ],
-      },
-      // THIRD PARTY-DASHBOARD ROUTES
-      thirdparty && {
-        path: "/",
-        element: <ThirdpartyLayout />,
-        children: [
-          { path: "/tickets", element: <ThirdPartyTickets/> },
-          { path: "/service-providers", element: <ThirdPartyServiceProvider /> },
-          { path: "/profile", element: <AdminProfile /> },
-          {path:'/notification',element:<NotificationsPage/>},
-          { path: "/chats", element: <Chats /> },
-          { path: "/inspectionsheets", element: <ThirdpartyInspaction /> },
-          { path: "/jobcards", element: <ThirdPartyJobcards /> },
-        ]
-      },
-      
-      organization && {
-        path: "/",
-        element: <OrganizationLayout />,
-        children: [
-          { path: "/", element: <OrganizationDashbord/> },
-          { path: "/tickets", element: <OrganizationTickets/> },
-          { path: "/assets", element: <OrganizationAssets /> },
-          { path: "/asset-history/:id", element: <AssetHistory /> },
-          { path: "/tickets-activity", element: <OrganizationTicketsActivity /> },
-          { path: "/inspectionsheets", element: <OrganizInspaction /> },
-          { path: "/inspections-activity", element: <OrganizaInspactionAcvity /> },
-          { path: "/service-providers", element: <OrgserviceProvider /> },
-          { path: "/jobcards", element: <OrganizationJobcarda /> },
-          { path: "/jobcards-overview", element: <OrganizationJobCardsOverview /> },
-          { path: "/maintenance", element: <OrganizMaintenance /> },
-          { path: "/profile", element: <AdminProfile /> },
-          {path:'/notification',element:<NotificationsPage/>},
-          { path: "/chats", element: <Chats /> },
-        ]
-      },
+      { path: "/asset-history/:id", element: <AssetHistory /> },
+      { path: "/tickets-activity", element: <TicketsActivity /> },
+      { path: "/inspections-activity", element: <InspactionAcvity /> },
 
+      { path: "/jobcards-overview", element: <JobCardsOverview /> },
+      { path: "/create-inspection", element: <CreateInspectionPage /> },
+      { path: "/profile", element: <AdminProfile /> },
+      { path: "/chats", element: <Chats /> },
 
-      {
-        path: "/",
-        element: <AuthLayout/>,
-        children: [
-          { path: "/login", element: <Login /> },
-          { path: "/signup", element: <Signup /> },
-          { path: "/reset-password", element: <ResetPassword /> },
-          {path:'/otp-verification',element:<OtpVerification/>},
-          {path:'/create-new-password',element:<CreateNewPassword/>},
-       
-        ]
-      }
-   
+      { path: '/notification', element: <NotificationsPage /> },
+    ],
+  },
+  // THIRD PARTY-DASHBOARD ROUTES
+  {
+    path: "/thirdparty",
+    element: <ThirdpartyLayout />,
+    children: [
+      { path: "", element: <ThirdPartyTickets /> },
+      { path: "service-providers", element: <ThirdPartyServiceProvider /> },
+      { path: "profile", element: <AdminProfile /> },
+      { path: 'notification', element: <NotificationsPage /> },
+      { path: "chats", element: <Chats /> },
+      { path: "inspectionsheets", element: <ThirdpartyInspaction /> },
+      { path: "jobcards", element: <ThirdPartyJobcards /> },
+    ]
+  },
+
+  {
+    path: "/organization",
+    element: <OrganizationLayout />,
+    children: [
+      { path: "", element: <OrganizationDashbord /> }, // Default for /organization
+      { path: "tickets", element: <OrganizationTickets /> },
+      { path: "tickets/tickets-activity", element: <OrganizationTicketsActivity /> },
+      { path: "assets", element: <OrganizationAssets /> },
+      { path: "assets/asset-history/:id", element: <AssetHistory /> },
+      { path: "inspectionsheets", element: <OrganizInspaction /> },
+      { path: "inspectionsheets/inspections-activity", element: <OrganizaInspactionAcvity /> },
+      { path: "service-providers", element: <OrgserviceProvider /> },
+      { path: "jobcards", element: <OrganizationJobcarda /> },
+      { path: "jobcards/jobcards-overview", element: <OrganizationJobCardsOverview /> },
+      { path: "maintenance", element: <OrganizMaintenance /> },
+      { path: "profile", element: <AdminProfile /> },
+      { path: "notification", element: <NotificationsPage /> },
+      { path: "chats", element: <Chats /> },
+    ]
+  },
+
+  {
+    path: "/",
+    element: <AuthLayout />,
+    children: [
+      { path: "/login", element: <Login /> },
+      { path: "/signup", element: <Signup /> },
+      { path: "/reset-password", element: <ResetPassword /> },
+      { path: '/otp-verification', element: <OtpVerification /> },
+      { path: '/create-new-password', element: <CreateNewPassword /> },
+
+    ]
+  }
+
 ]);
 
 export default router;

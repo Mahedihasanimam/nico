@@ -112,7 +112,7 @@ const navigate = useNavigate()
         );
     };
     const handleticketacvity= ()=>{
-        navigate('/inspections-activity')
+        navigate('inspections-activity')
     }
     return (
         <div className="tickets-page relative p-4">
